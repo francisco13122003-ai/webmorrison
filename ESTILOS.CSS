@@ -62,3 +62,121 @@ section#portada{
 		transition: 1s;
 		
 	}
+
+section#modelos{
+	background: white;
+	color: #1b1b1b;
+	padding: 90px 20px;
+}
+
+section#modelos .contenedor{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+section#modelos .cabecera-modelos{
+	text-align: left;
+	margin-bottom: 40px;
+}
+
+section#modelos .cabecera-modelos h2{
+	font-size: 52px;
+	line-height: 1.1;
+	margin: 0 0 10px;
+	font-weight: 700;
+}
+
+section#modelos .cabecera-modelos p{
+	font-size: 28px;
+	margin: 0;
+	font-weight: 300;
+}
+
+section#modelos .tarjetas-modelos{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
+
+section#modelos .tarjeta-modelo{
+	background: white;
+	border-radius: 16px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+	padding: 25px;
+	text-align: center;
+}
+
+section#modelos .tarjeta-modelo h3{
+	font-size: 32px;
+	margin: 0 0 20px;
+	font-weight: 600;
+}
+
+section#modelos .imagen-modelo{
+	background: #fafafa;
+	border-radius: 12px;
+	padding: 20px;
+	min-height: 280px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+section#modelos .imagen-modelo img{
+	width: 100%;
+	max-width: 280px;
+	height: 240px;
+	object-fit: contain;
+	display: block;
+}
+
+section#modelos .boton-modelo{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 16px;
+	letter-spacing: 1px;
+	color: white;
+	background: #4a2e1f;
+	padding: 12px 30px;
+	border-radius: 999px;
+	transition: background 0.3s ease;
+}
+
+section#modelos .boton-modelo:hover{
+	background: #2f1d14;
+}
+
+@media (max-width: 992px){
+	section#modelos .cabecera-modelos h2{
+		font-size: 42px;
+	}
+
+	section#modelos .cabecera-modelos p{
+		font-size: 24px;
+	}
+
+	section#modelos .tarjetas-modelos{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 600px){
+	section#modelos{
+		padding: 70px 16px;
+	}
+
+	section#modelos .cabecera-modelos h2{
+		font-size: 34px;
+	}
+
+	section#modelos .cabecera-modelos p{
+		font-size: 22px;
+	}
+
+	section#modelos .tarjetas-modelos{
+		grid-template-columns: 1fr;
+	}
+}
