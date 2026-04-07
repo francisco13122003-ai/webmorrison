@@ -15,8 +15,9 @@
 		<div>
 			<p>La más icónica</p>
 			<h1>Zapatillas unisex con diseños exclusios</h1>
-			<a class="yasin" href="#">Comprar</a>
-			<a class="javi" href="#">Blog</a>
+			<a class="yasin" href="#" id="btn-comprar">Comprar</a>
+			<a class="javi" href="#" id="btn-blog">Blog</a>
+			<p id="mensaje-portada" class="mensaje-interactivo"></p>
 		</div>
 	</section>
 
@@ -29,30 +30,71 @@
 
 			<div class="tarjetas-modelos">
 				<div class="tarjeta-modelo">
-					<h3>Modelo Maya</h3>
+					<h3>Bob-Esponja</h3>
 					<div class="imagen-modelo">
 						<img src="foto1.jpg" alt="Modelo Maya">
 					</div>
-					<a class="boton-modelo" href="#">DESCUBRIR</a>
+					<a class="boton-modelo" href="#" data-modelo="bobesponja">DESCUBRIR</a>
+					<p class="mensaje-modelo" id="mensaje-bobesponja"></p>
 				</div>
 
 				<div class="tarjeta-modelo">
-					<h3>Modelo Inka</h3>
+					<h3>Spiderman</h3>
 					<div class="imagen-modelo">
 						<img src="foto2.jpg" alt="Modelo Inka">
 					</div>
-					<a class="boton-modelo" href="#">DESCUBRIR</a>
+					<a class="boton-modelo" href="#" data-modelo="spiderman">DESCUBRIR</a>
+					<p class="mensaje-modelo" id="mensaje-spiderman"></p>
 				</div>
 
 				<div class="tarjeta-modelo">
-					<h3>Modelo Bel-Air</h3>
+					<h3>Moco</h3>
 					<div class="imagen-modelo">
 						<img src="foto3.jpg" alt="Modelo Bel-Air">
 					</div>
-					<a class="boton-modelo" href="#">DESCUBRIR</a>
+					<a class="boton-modelo" href="#" data-modelo="moco">DESCUBRIR</a>
+					<p class="mensaje-modelo" id="mensaje-moco"></p>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<script>
+		const mensajePortada = document.getElementById("mensaje-portada");
+		const btnComprar = document.getElementById("btn-comprar");
+		const btnBlog = document.getElementById("btn-blog");
+		const botonesModelo = document.querySelectorAll(".boton-modelo");
+
+		btnComprar.addEventListener("click", function(evento) {
+			evento.preventDefault();
+			const ofertas = ["10%", "15%", "20%"];
+			const ofertaSorpresa = ofertas[Math.floor(Math.random() * ofertas.length)];
+			mensajePortada.textContent = `🎉 ¡Oferta sorpresa activada! Hoy tienes un ${ofertaSorpresa} de descuento en tu primer pedido.`;
+		});
+
+		btnBlog.addEventListener("click", function(evento) {
+			evento.preventDefault();
+			const tendencias = ["colores neón", "retro urbano", "minimalismo total"];
+			const tendenciaDelDia = tendencias[Math.floor(Math.random() * tendencias.length)];
+			mensajePortada.textContent = `📰 Tendencia del día: ${tendenciaDelDia}. ¡Pásate por el blog para inspirarte!`;
+		});
+
+		const historiasModelos = {
+			bobesponja: "🍍 Fondo de Bikini Edition: suela ultraligera y energía para un día bien cuadrado.",
+			spiderman: "🕸️ Edición arácnida: diseño elástico y agarre para moverte como un héroe entre edificios.",
+			moco: "🧪 Slime Mode ON: estilo irreverente con acabado brillante para romper cualquier outfit."
+		};
+
+		botonesModelo.forEach(function(boton) {
+			boton.addEventListener("click", function(evento) {
+				evento.preventDefault();
+				const modelo = boton.dataset.modelo;
+				const mensajeModelo = document.getElementById(`mensaje-${modelo}`);
+
+				mensajeModelo.textContent = historiasModelos[modelo];
+				mensajeModelo.classList.add("mensaje-visible");
+			});
+		});
+	</script>
 </body>
 </html>
