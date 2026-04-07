@@ -1,0 +1,64 @@
+*{
+	font-family: "oswald", sans-serif;
+}
+
+section#portada{
+	background: url(img/zapatillas-morrison.webp);
+	background-size: cover;
+	min-height: 100vh;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+	section#portada div p{
+		text-transform: uppercase;
+		font-size: 50px;
+		margin-bottom: 0;
+		font-weight: bold;
+	}
+
+	section#portada div a.yasin{
+		color: black;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 15px 40px;
+		background: white;
+		border-radius: 100px;
+		font-size: 20px;
+		text-decoration: none;
+		display: inline-block;
+		margin-right: 20px;
+		border: solid 3px white;
+
+	}
+	section#portada div a.yasin:hover{
+		color: white;
+		background: none;
+		border: solid 3px white;
+		transition: 1s;
+		
+	}
+	section#portada div a.javi{
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 15px 40px;
+		background: crimson;
+		border-radius: 100px;
+		font-size: 20px;
+		text-decoration: none;
+		display: inline-block;
+		margin-right: 20px;
+		border: solid 3px crimson;
+
+	}
+	section#portada div a.javi:hover{
+		color: white;
+		background: none;
+		border: solid 3px crimson;
+		transition: 1s;
+		
+	}
